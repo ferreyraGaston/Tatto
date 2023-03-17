@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Roboto:wght@300&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    background-color: rgb(240, 240, 240);
+}
+
+h1, h2{
+    font-family: Roboto, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+header{
+    background: #ffffff;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+}
+
+#logo{
+   height: 2.5em;
+   margin: 2em;
+   padding-left: 1em;
+}
+
+.nav-toggle{
+    display: none;
+}
+
+.nav-toggle-label{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 4em;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav{
+    position: absolute;
+    top: 100%;
+    background:rgb(240, 240, 240);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul{
+    list-style: none;
+    text-align: center;
+}
+
+nav li{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover{
+    color: #c0b386;
+}
+
+/* Get to  siblings = ~ */
+.nav-toggle:checked ~ nav{
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+.social-network{
+    display: none;
+}
+
+#background-holder{
+    width: 100%;
+    height: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#background-image{
+    background: url('../images/background-image4.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+}
+
+#background-image h2{
+    color: #ffffff;
+    text-align: center;
+    padding-top: 400px;
+    font-size: 2em;
+}
+
+#center-about{
+    background-color: rgb(240, 240, 240);   
+    width: 100%;
+}
+
+#about-me{
+    color: black;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#content{
+    height: auto;
+    display: flex;
+}
+
+#left-about{
+    text-align: center;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-bottom: 50px;
+}
+
+.left-about-copy{
+    width: 100%;
+    clear: both;
+    color: black;
+    font-size: 1.8em; 
+}
+
+.left-about-copy p{
+    width: 100%;
+}
+
+.image-card{
+    display: none;
+}
+
+#btn-contact-me-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 50px;
+}
+
+#btn-contact-me{
+    background-color: #c0b386;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 32px;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Homepage portfolio teaser */
+#portfolio-teaser{
+    padding-top: 4em;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+#portfolio-teaser > img{
+    all: unset;
+    width: 80%;
+    padding-bottom: 2em;
+    object-fit: contain;
+}
+
+#btn-portfolio-container{
+    height: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+#btn-portfolio{
+    background-color: #c0b386;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 32px;
+    border-radius: 10%;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Portfolio  */
+#portfolio{
+    line-height: 2;
+    columns: 2;
+    column-gap: 0.8em;
+    padding-top: 7.8em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#portfolio > img {
+    width: 100%;
+}
+
+/* Contact me */
+#booking-container{
+    font-size: 1.5em;
+    padding-top: 140px;
+    display: flex;
+    justify-content: center;
+}
+
+#booking{
+    text-align: center;
+    color: black;
+    margin: 2em;
+
+}
+#booking h1{
+    color: black;
+    text-transform: uppercase;
+    padding-bottom: 1em;
+}
+
+#form-container {
+    height: auto;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: #c0b386;
+    border-radius: 16px;
+    margin-bottom: 4em;
+    margin-top: 4em;
+}
+
+.form-group {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    margin-top: 5px;
+}
+  
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    border: none;
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s ease background-color;
+}
+
+.social-network{
+    display: none;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+/* Computer size */
+@media screen and (min-width: 1200px){
+    .nav-toggle-label{
+        display: none;
+    }
+
+    header{
+        display: flex;
+    }
+
+    hr{
+        display: none;
+    }
+
+    nav{
+        all: unset;
+        height: auto;
+        width: 100%;
+        position: absolute;
+        display: flex;
+    }
+
+    nav ul{
+        display: flex;
+        margin: auto;
+        padding-top: 0.5em;
+    }
+
+    nav li{
+        padding-right: 1em;
+    }
+    
+    nav a{
+        opacity: 1;  
+        position: relative;
+    }
+
+    nav a::before{
+        content: ''; /*when working with sudo element give content of nothing most of the times */
+        display: block;
+        height: 5px;
+        background: #c0b386;
+        position: absolute;
+        bottom: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before{
+        transform: scale(1,1);
+    }
+
+    #center-about{
+        background-color: rgb(240, 240, 240);   
+        width: 100%;
+    }
+    
+    #about-me{
+        color: black;
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 100px;    
+    }
+
+    #content{
+        height: auto;
+        display: flex;
+    }
+    
+    .left-about-copy p{
+        width: 70%;
+        text-align: left;
+    }
+
+    #left-about{
+        margin-left: 10%;
+    }
+
+    #right-about{
+        margin-right: 25%;
+    }
+
+    .image-card{
+        display: block;
+        width: 280%;
+    }
+
+    #btn-contact-me-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(240, 240, 240);
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+
+    #btn-contact-me{
+        background-color: #c0b386;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 10%;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+    }
+
+    /* Homepage portfolio teaser */
+    #portfolio-teaser{
+        all:unset;
+        padding-top: 4em;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+    }
+
+    #portfolio-teaser > img{
+        all: unset;
+        width: 25%;
+        height: 500px;
+        object-fit: contain;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    #btn-portfolio-container{
+        height: 8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-color: #ffffff;
+    }
+
+    #btn-portfolio{
+        background-color: #c0b386;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 15px 32px;
+        border-radius: 10%;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+    }
+    
+     footer{
+        height: 150px;
+    }
+
+    /* Social media icons */
+    .social-network{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 4em;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .social-network li{
+        display: inline;
+        margin: 10px;
+    }
+    
+    .social-network i{
+        font-size: 160%;
+        margin: 1px;
+        padding: 2%;
+        color: #c0b386;
+    }
+
+    /* Portfolio  */
+    #portfolio{
+        line-height: 2;
+        columns: 4;
+        column-gap: 0.8em;
+        padding-top: 7.8em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    
+    #portfolio > img {
+        width: 100%;
+    }
+
+    /* Contact me */
+    #booking-container{
+        font-size: 1.5em;
+        padding-top: 140px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #booking{
+        text-align: center;
+        color: black;
+        margin: 2em;
+    }
+
+    #booking h1{
+        color: black;
+        text-transform: uppercase;
+        padding-bottom: 1em;
+    }
+
+    #form-container {
+        height: auto;
+        width: 100%;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        box-shadow: 0px 0px 20px #00000010;
+        background-color: #c0b386;
+        border-radius: 16px;
+        margin-bottom: 4em;
+        margin-top: 4em;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 5px;
+        font-size: 18px;
+        border: 1px solid rgba(128, 128, 128, 0.199);
+        margin-top: 5px;
+    }
+      
+    textarea {
+        resize: vertical;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        border: none;
+        background-color: rgb(240, 240, 240);
+        padding: 20px;
+        font-size: 24px;
+        text-transform: uppercase;
+        border-radius: 8px;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: 0.3s ease background-color;
+    }
+}
